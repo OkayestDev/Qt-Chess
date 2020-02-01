@@ -13,6 +13,7 @@ private:
 
 public:
     Board(QWidget *);
+    void accessories(QWidget *);
     void placePawns();
     void placePowerPieces();
     void generateEmptyBoard(QWidget *);

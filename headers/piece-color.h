@@ -2,6 +2,6 @@
 
 enum PieceColor
 {
-    white = 0,
-    black = 1,
+    white,
+    black,
 };

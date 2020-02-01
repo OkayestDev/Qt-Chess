@@ -1,23 +1,22 @@
 #pragma once
 
-#include "tile.h"
-
-extern Tile *tile[8][8];
-extern int exp[60], max, wR, wC;
+#include "./tile.h"
 
 class Validation
 {
-    int flag, retVal;
+private:
+    int flag;
+    int retVal;
 
 public:
     Validation();
-    int chooser(Tile *temp);
-    int validateBishop(Tile *temp);
-    int validateQueen(Tile *temp);
-    int validateKing(Tile *temp);
-    int validateHorse(Tile *temp);
-    int validateRook(Tile *temp);
-    int validatePawn(Tile *temp);
+    int chooser(Tile *);
+    int validateBishop(Tile *);
+    int validateQueen(Tile *);
+    int validateKnight(Tile *);
+    int validateKing(Tile *);
+    int validateRook(Tile *);
+    int validatePawn(Tile *);
     void orange();
-    int check(Tile *temp);
+    int check(Tile *);
 };

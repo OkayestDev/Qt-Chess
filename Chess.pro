@@ -15,11 +15,34 @@ MOC_DIR = $$DESTDIR/moc
 UI_DIR = $$DESTDIR/ui
 RCC_DIR = $$DESTDIR/qrc
 
-source += src/
+SOURCES = \
+    source/board.cpp \
+    source/border.cpp \
+    source/main.cpp \
+    source/tile.cpp \
+    source/validation.cpp
 
-headers += headers/
-
-FORMS += mainwindow.ui
+HEADERS = \
+    headers/board.h \
+    headers/border.h \
+    headers/piece-color.h \
+    headers/piece.h \
+    headers/tile-color.h \
+    headers/tile.h \
+    headers/validation.h
 
 RESOURCES += \
-    Images.qrc
+    Images/bishop_black.svg \
+    Images/bishop_white.svg \
+    Images/exp.png \
+    Images/king_black.svg \
+    Images/king_white.svg \
+    Images/knight_black.svg \
+    Images/knight_white.svg \
+    Images/pawn_black.svg \
+    Images/pawn_white.svg \
+    Images/profile.png \
+    Images/queen_black.svg \
+    Images/queen_white.svg \
+    Images/rook_black.svg \
+    Images/rook_white.svg
