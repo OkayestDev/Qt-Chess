@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.thtml": "php",
+        "Vagrantfile": "ruby",
+        "*.lock": "json",
+        "*.pp": "ruby",
+        ".php_cs": "php",
+        "qdebug": "cpp",
+        "qlabel": "cpp",
+        "qmainwindow": "cpp",
+        "qapplication": "cpp"
+    }
+}
