@@ -8,6 +8,10 @@
         "qdebug": "cpp",
         "qlabel": "cpp",
         "qmainwindow": "cpp",
-        "qapplication": "cpp"
+        "qapplication": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     }
 }

@@ -1,24 +1,34 @@
+#include <QLabel>
+#include <QDebug>
+#include "../headers/game-engine.h"
 #include "../headers/tile.h"
 #include "../headers/validation.h"
 #include "../headers/piece-color.h"
 #include "../headers/tile-color.h"
 
-extern int count, turn;
-extern QWidget *myWidget;
+Tile::Tile(QWidget *pParent, Qt::WindowFlags f) : QLabel(pParent, f)
+{
+    isSelected = false;
+};
+
+Tile::Tile(const QString &text, QWidget *pParent, Qt::WindowFlags f) : QLabel(text, pParent, f)
+{
+    isSelected = false;
+};
 
 void Tile::mousePressEvent(QMouseEvent *event)
 {
-    validate(this, ++count);
+    gameEngine->selectTile(this);
 }
 
 void Tile::setPiece(Piece newPiece, PieceColor newPieceColor)
 {
     pieceColor = newPieceColor;
     piece = newPiece;
-    display(newPiece);
+    displayPiece(newPiece);
 }
 
-void Tile::display(Piece elem)
+void Tile::displayPiece(Piece elem)
 {
     this->piece = elem;
 
@@ -80,85 +90,90 @@ void Tile::display(Piece elem)
 
 void Tile::validate(Tile *temp, int c)
 {
-    //     int retValue, i;
+    // int retValue, i;
 
-    //     if (c == 1)
+    // if (c == 1)
+    // {
+    //     if (temp->piece && (temp->pieceColor == turn))
     //     {
-    //         if (temp->piece && (temp->pieceColor == turn))
-    //         {
-    //             retValue = valid->chooser(temp);
+    //         retValue = valid->chooser(temp);
 
-    //             if (retValue)
-    //             {
-    //                 clickedTile = new Tile();
-    //                 temp->setStyleSheet("QLabel {background-color: green;}");
-    //                 clickedTile = temp;
-    //             }
-    //             else
-    //             {
-    //                 temp->setStyleSheet("QLabel {background-color: red;}");
-    //                 count = 0;
-    //             }
+    //         if (retValue)
+    //         {
+    //             clickedTile = new Tile();
+    //             temp->setStyleSheet("QLabel {background-color: green;}");
+    //             clickedTile = temp;
     //         }
     //         else
     //         {
+    //             temp->setStyleSheet("QLabel {background-color: red;}");
     //             count = 0;
     //         }
     //     }
-
     //     else
     //     {
+    //         count = 0;
+    //     }
+    // }
+    // else
+    // {
 
-    //         if (temp->tileNum == clickedTile->tileNum)
+    //     if (temp->tileNum == clickedTile->tileNum)
+    //     {
+    //         clickedTile->tileDisplay();
+    //         disOrange();
+    //         max = 0;
+    //         count = 0;
+    //     }
+
+    //     for (i = 0; i < max; i++)
+    //     {
+    //         if (temp->tileNum == exp[i])
     //         {
+    //             clickedTile->piece = 0;
+    //             temp->piece = 1;
+
+    //             temp->pieceColor = clickedTile->pieceColor;
+    //             temp->piece = clickedTile->piece;
+
+    //             clickedTile->display(clickedTile->piece);
+    //             temp->display(clickedTile->piece);
+
     //             clickedTile->tileDisplay();
+    //             temp->tileDisplay();
+
+    //             retValue = valid->check(clickedTile);
+
     //             disOrange();
+
     //             max = 0;
+
+    //             turn = (turn + 1) % 2;
     //             count = 0;
     //         }
 
-    //         for (i = 0; i < max; i++)
-    //         {
-    //             if (temp->tileNum == exp[i])
-    //             {
-    //                 clickedTile->piece = 0;
-    //                 temp->piece = 1;
-
-    //                 temp->pieceColor = clickedTile->pieceColor;
-    //                 temp->piece = clickedTile->piece;
-
-    //                 clickedTile->display(clickedTile->piece);
-    //                 temp->display(clickedTile->piece);
-
-    //                 clickedTile->tileDisplay();
-    //                 temp->tileDisplay();
-
-    //                 retValue = valid->check(clickedTile);
-
-    //                 disOrange();
-
-    //                 max = 0;
-
-    //                 turn = (turn + 1) % 2;
-    //                 count = 0;
-    //             }
-
-    //             else
-    //                 count = 1;
-    //         }
+    //         else
+    //             count = 1;
     //     }
+    // }
 }
 
 void Tile::tileDisplay()
 {
+    if (this->isSelected)
+    {
+        this->setStyleSheet("QLabel { background-color: green; }");
+        return;
+    }
+
     // @todo make sure these are actually white
     if (this->tileColor == TileColor::grey)
     {
-        this->setStyleSheet("QLabel {background-color: rgb(120, 120, 90);}:hover{background-color: rgb(170,85,127);}");
+        this->setStyleSheet("QLabel { background-color: rgb(120, 120, 90); }:hover { background-color: rgb(170,85,127); }");
     }
     else
     {
-        this->setStyleSheet("QLabel {background-color: rgb(211, 211, 158);}:hover{background-color: rgb(170,95,127);}");
+        this->setStyleSheet("QLabel { background-color: rgb(211, 211, 158); }:hover { background-color: rgb(170,95,127); }");
     }
 }
 

@@ -12,15 +12,16 @@ public:
     TileColor tileColor;
     Piece piece;
     PieceColor pieceColor;
+    bool isSelected;
     int row;
     int col;
     int tileNum;
 
-    Tile(QWidget *pParent = 0, Qt::WindowFlags f = 0) : QLabel(pParent, f){};
-    Tile(const QString &text, QWidget *pParent = 0, Qt::WindowFlags f = 0) : QLabel(text, pParent, f){};
+    Tile(QWidget *pParent = 0, Qt::WindowFlags f = 0);
+    Tile(const QString &text, QWidget *pParent = 0, Qt::WindowFlags f = 0);
 
     void mousePressEvent(QMouseEvent *);
-    void display(Piece);
+    void displayPiece(Piece);
     void tileDisplay();
     void setPiece(Piece, PieceColor);
     void validate(Tile *, int);

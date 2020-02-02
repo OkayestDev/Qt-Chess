@@ -10,7 +10,7 @@ Board::Board(QWidget *baseWidget)
     border[0]->outline(baseWidget, 330, 105, 0);
     border[1]->outline(baseWidget, 330, 637, 0);
     border[2]->outline(baseWidget, 330, 125, 1);
-    border[2]->outline(baseWidget, 862, 125, 1);
+    border[3]->outline(baseWidget, 862, 125, 1);
 
     generateEmptyBoard(baseWidget);
     placePawns();
@@ -106,4 +106,23 @@ void Board::placePowerPieces()
     tiles[7][5]->setPiece(bishop, PieceColor::white);
     tiles[7][6]->setPiece(knight, PieceColor::white);
     tiles[7][7]->setPiece(rook, PieceColor::white);
+}
+
+void Board::deselectAllTilesExcept(Tile *tile)
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (tile->row == tiles[i][j]->row && tile->col == tiles[i][j]->col)
+            {
+                tiles[i][j]->isSelected = true;
+            }
+            else
+            {
+                tiles[i][j]->isSelected = false;
+            }
+            tiles[i][j]->tileDisplay();
+        }
+    }
 }

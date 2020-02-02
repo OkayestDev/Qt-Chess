@@ -1,0 +1,14 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C++",
+      "type": "shell",
+      "command": "qmake Chess.pro -spec win32-g++ \"CONFIG+=debug\" \"CONFIG+=qml_debug\"; mingw32-make -f -j12; windeployqt ./build/Chess.exe;",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

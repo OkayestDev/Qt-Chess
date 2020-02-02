@@ -20,7 +20,8 @@ SOURCES = \
     source/border.cpp \
     source/main.cpp \
     source/tile.cpp \
-    source/validation.cpp
+    source/validation.cpp \
+    source/game-engine.cpp
 
 HEADERS = \
     headers/board.h \
@@ -29,7 +30,8 @@ HEADERS = \
     headers/piece.h \
     headers/tile-color.h \
     headers/tile.h \
-    headers/validation.h
+    headers/validation.h \
+    headers/game-engine.h
 
 RESOURCES += \
     Images/bishop_black.svg \

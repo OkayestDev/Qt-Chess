@@ -32,7 +32,6 @@ Validation::Validation() {}
 //     return flag;
 // }
 
-// //PAWN
 // int Validation::validatePawn(Tile *tile)
 // {
 //     int row, col;
@@ -110,7 +109,6 @@ Validation::Validation() {}
 //     return retVal;
 // }
 
-// //ROOK
 // int Validation::validateRook(Tile *tile)
 // {
 //     int r, c;
@@ -656,5 +654,7 @@ Validation::Validation() {}
 //     int i, n;
 
 //     for (i = 0; i < max; i++)
+//     {
 //         tiles[exp[i] / 8][exp[i] % 8]->setStyleSheet("QLabel {background-color: orange;}");
+//     }
 // }
