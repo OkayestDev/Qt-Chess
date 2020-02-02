@@ -3,7 +3,7 @@
 #include "../headers/tile.h"
 #include "../headers/board.h"
 
-GameEngine *gameEngine;
+GameEngine *gameEngine = NULL;
 
 int main(int argc, char *argv[])
 {

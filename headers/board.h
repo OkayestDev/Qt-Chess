@@ -7,15 +7,16 @@
 class Board
 {
 private:
-    Tile *tiles[8][8] = {{NULL}};
     Border *border[4] = {NULL};
 
 public:
+    Tile *tiles[8][8] = {{NULL}};
     Board();
     Board(QWidget *);
+    Tile *getTile(int row, int col);
     void accessories(QWidget *);
     void placePawns();
     void placePowerPieces();
     void generateEmptyBoard(QWidget *);
-    void deselectAllTilesExcept(Tile *);
+    void displayTiles();
 };

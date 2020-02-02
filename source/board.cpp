@@ -108,20 +108,12 @@ void Board::placePowerPieces()
     tiles[7][7]->setPiece(rook, PieceColor::white);
 }
 
-void Board::deselectAllTilesExcept(Tile *tile)
+void Board::displayTiles()
 {
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
         {
-            if (tile->row == tiles[i][j]->row && tile->col == tiles[i][j]->col)
-            {
-                tiles[i][j]->isSelected = true;
-            }
-            else
-            {
-                tiles[i][j]->isSelected = false;
-            }
             tiles[i][j]->tileDisplay();
         }
     }

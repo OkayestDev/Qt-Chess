@@ -12,7 +12,6 @@ public:
     TileColor tileColor;
     Piece piece;
     PieceColor pieceColor;
-    bool isSelected;
     int row;
     int col;
     int tileNum;
