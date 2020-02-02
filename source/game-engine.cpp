@@ -30,8 +30,7 @@ void GameEngine::selectTile(Tile *tile)
 
 void GameEngine::selectingPiece(Tile *tile)
 {
-    fill_n(availableMoves, 60, NULL);
-    max = 0;
+    prepareNewMove();
     selectedTile = tile;
 
     switch (tile->piece)
@@ -58,6 +57,12 @@ void GameEngine::selectingPiece(Tile *tile)
 
     board->displayTiles();
     setAvailableMoves();
+}
+
+void GameEngine::prepareNewMove()
+{
+    fill_n(availableMoves, 60, NULL);
+    max = 0;
 }
 
 void GameEngine::selectingMove(Tile *tile)
@@ -90,10 +95,11 @@ void GameEngine::doMove(Tile *tile)
 
     tile->setPiece(selectedTilePiece, turn);
     selectedTile->setPiece(none, turn);
-    
+
     turn = turn == white
                ? black
                : white;
+    prepareNewMove();
 }
 
 bool GameEngine::isGameOver()

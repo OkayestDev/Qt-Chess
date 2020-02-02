@@ -34,6 +34,7 @@ public:
     int validateRook(Tile *);
     int validatePawn(Tile *);
     bool isGameOver();
+    void prepareNewMove();
     void doMove(Tile *);
 };
 
