@@ -3,14 +3,16 @@
 #include "./piece-color.h"
 #include "./tile.h"
 #include "./board.h"
+#include "./available-moves.h"
 
 class GameEngine
 {
 private:
     PieceColor turn;
     Board *board;
+    AvailableMoves *availableMoves;
     int moveCount;
-    int availableMoves[60];
+    int availableMovesArray[60];
     int max = 0;
     int wR;
     int wC;

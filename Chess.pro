@@ -21,7 +21,10 @@ SOURCES = \
     source/main.cpp \
     source/tile.cpp \
     source/player.cpp \
-    source/game-engine.cpp
+    source/game-engine.cpp \
+    source/available-moves.cpp \
+    source/move.cpp \
+    source/move-history.cpp
 
 HEADERS = \
     headers/board.h \
@@ -31,7 +34,10 @@ HEADERS = \
     headers/tile-color.h \
     headers/tile.h \
     headers/player.h \
-    headers/game-engine.h
+    headers/game-engine.h \
+    headers/available-moves.h \
+    headers/move.h \
+    headers/move-history.h
 
 RESOURCES += \
     Images/bishop_black.svg \
