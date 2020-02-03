@@ -42,7 +42,7 @@ HEADERS = \
 RESOURCES += \
     Images/bishop_black.svg \
     Images/bishop_white.svg \
-    Images/exp.png \
+    Images/available-move.png \
     Images/king_black.svg \
     Images/king_white.svg \
     Images/knight_black.svg \

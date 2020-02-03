@@ -6,7 +6,7 @@
     {
       "label": "Build C++",
       "type": "shell",
-      "command": "qmake Chess.pro -spec win32-g++ \"CONFIG+=debug\" \"CONFIG+=qml_debug\"; mingw32-make -f -j12; windeployqt ./build/Chess.exe;",
+      "command": "qmake; mingw32-make -j12; windeployqt ./build/Chess.exe;",
       "group": "build",
       "problemMatcher": []
     }
