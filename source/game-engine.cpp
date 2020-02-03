@@ -1,8 +1,11 @@
+#include <algorithm>
+
 #include "../headers/game-engine.h"
 #include "../headers/board.h"
 #include "../headers/tile.h"
 #include "../headers/piece-color.h"
 #include "../headers/piece.h"
+
 
 using namespace std;
 

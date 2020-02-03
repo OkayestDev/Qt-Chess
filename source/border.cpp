@@ -16,5 +16,5 @@ void Border::outline(QWidget *baseWidget, int xPos, int yPos, int Pos)
         outLabel->setGeometry(xPos, yPos, 20, 512); // Vertical Borders
     }
 
-    outLabel->setStyleSheet("QLabel { background-color :rgb(170, 170, 127); color : black; }");
+    outLabel->setStyleSheet("QLabel { background-color: #21100D; color : black; }");
 }

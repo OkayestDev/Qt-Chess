@@ -2,7 +2,6 @@
 #include <QDebug>
 #include "../headers/game-engine.h"
 #include "../headers/tile.h"
-#include "../headers/validation.h"
 #include "../headers/piece-color.h"
 #include "../headers/tile-color.h"
 
@@ -97,10 +96,10 @@ void Tile::tileDisplay()
     // @todo make sure these are actually white
     if (this->tileColor == TileColor::grey)
     {
-        this->setStyleSheet("QLabel { background-color: rgb(120, 120, 90); }:hover { background-color: rgb(170,85,127); }");
+        this->setStyleSheet("QLabel { background-color: #DEB78F; }:hover { background-color: rgb(170,85,127); }");
     }
     else
     {
-        this->setStyleSheet("QLabel { background-color: rgb(211, 211, 158); }:hover { background-color: rgb(170,95,127); }");
+        this->setStyleSheet("QLabel { background-color: #935330; }:hover { background-color: rgb(170,95,127); }");
     }
 }

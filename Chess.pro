@@ -20,7 +20,7 @@ SOURCES = \
     source/border.cpp \
     source/main.cpp \
     source/tile.cpp \
-    source/validation.cpp \
+    source/player.cpp \
     source/game-engine.cpp
 
 HEADERS = \
@@ -30,7 +30,7 @@ HEADERS = \
     headers/piece.h \
     headers/tile-color.h \
     headers/tile.h \
-    headers/validation.h \
+    headers/player.h \
     headers/game-engine.h
 
 RESOURCES += \
