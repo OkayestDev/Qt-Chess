@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     Player *player2 = new Player(black);
 
     Board *board = new Board(myWidget);
-    gameEngine = new GameEngine(board);
+    gameEngine = new GameEngine(board, player1, player2);
 
     myWidget->show();
     return app.exec();

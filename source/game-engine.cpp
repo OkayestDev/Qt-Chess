@@ -11,11 +11,13 @@ using namespace std;
 
 GameEngine::GameEngine(){};
 
-GameEngine::GameEngine(Board *_board)
+GameEngine::GameEngine(Board *_board, Player *_player1, Player *_player2)
 {
     this->board = _board;
     this->availableMoves = new AvailableMoves();
     this->moveCount = 0;
+    player1 = _player1;
+    player2 = _player2;
     this->turn = PieceColor::white;
 }
 
@@ -95,6 +97,7 @@ void GameEngine::doMove(Tile *tile)
     // Capturing
     if (tile->piece != none && tile->pieceColor != selectedTile->pieceColor)
     {
+        capturePiece(selectedTile, tile);
     }
 
     tile->setPiece(selectedTilePiece, turn);
@@ -104,6 +107,16 @@ void GameEngine::doMove(Tile *tile)
                ? black
                : white;
     prepareNewMove();
+}
+
+void GameEngine::capturePiece(Tile *fromTile, Tile *toTile)
+{
+    Player *playerWhoLostPiece = toTile->pieceColor == player1->pieceColor
+                                     ? player1
+                                     : player2;
+    Player *playerToAddPointsTo = fromTile->pieceColor == player1->pieceColor
+                                      ? player1
+                                      : player2;
 }
 
 bool GameEngine::isGameOver()

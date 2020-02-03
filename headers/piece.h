@@ -1,5 +1,7 @@
 #pragma once
 
+#include <map>
+
 enum Piece
 {
     none = 0,
@@ -10,3 +12,4 @@ enum Piece
     queen = 5,
     king = 6,
 };
+const std::map<Piece, int> pieceToPoints;
