@@ -24,7 +24,8 @@ SOURCES = \
     source/game-engine.cpp \
     source/available-moves.cpp \
     source/move.cpp \
-    source/move-history.cpp
+    source/move-history.cpp \
+    source/piece.cpp
 
 HEADERS = \
     headers/board.h \

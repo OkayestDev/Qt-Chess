@@ -12,4 +12,4 @@ enum Piece
     queen = 5,
     king = 6,
 };
-const std::map<Piece, int> pieceToPoints;
+extern std::map<Piece, int> pieceToPoints;

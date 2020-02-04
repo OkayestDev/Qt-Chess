@@ -15,7 +15,7 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "C:\\Qt\\Tools\\mingw730_64\\bin\\gdb.exe",
+      "miDebuggerPath": "C:\\Qt\\Tools\\mingw730_32\\bin\\gdb.exe",
       "preLaunchTask": "Build C++",
       "setupCommands": [
         {

@@ -1,7 +1,7 @@
 #include <map>
 #include "../headers/piece.h"
 
-const std::map<Piece, int> pieceToPoints = {
+std::map<Piece, int> pieceToPoints = {
     {none, 0},
     {pawn, 1},
     {rook, 5},

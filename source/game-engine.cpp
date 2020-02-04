@@ -73,7 +73,6 @@ void GameEngine::prepareNewMove()
 
 void GameEngine::selectingMove(Tile *tile)
 {
-
     int tileNum = tile->tileNum;
     const bool isAvailableMoveSquare = board->tiles[availableMovesArray[tileNum] / 8][availableMovesArray[tileNum] % 8]->piece == none;
     for (int i = 0; i < 60 && availableMovesArray[i] != 0; i++)
@@ -117,6 +116,8 @@ void GameEngine::capturePiece(Tile *fromTile, Tile *toTile)
     Player *playerToAddPointsTo = fromTile->pieceColor == player1->pieceColor
                                       ? player1
                                       : player2;
+    playerWhoLostPiece->addPieceToLostPieces(toTile->piece);
+    playerToAddPointsTo->addPointsToPlayer(toTile->piece);
 }
 
 bool GameEngine::isGameOver()

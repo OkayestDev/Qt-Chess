@@ -17,6 +17,6 @@ Move::Move(Tile *fromTile, Tile *toTile)
 QString Move::getMoveAsString()
 {
     QString qString = "";
-    
+
     return qString;
 }
