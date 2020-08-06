@@ -1,4 +1,4 @@
-# WIP
+Chess Written in C++ using QT framework as the GUI
 
 # Running
 
